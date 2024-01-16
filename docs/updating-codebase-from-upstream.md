@@ -1,6 +1,20 @@
 # Introduction
 This document outlines the steps to pull changes from an upstream repository into a separate branch for testing and then merge those changes into the main branch after testing and resolving conflicts.
 
+## High-level workflow for Merging Upstream Changes:
+
+1. **Creating a New Branch:** When there are upstream changes you want to merge, create a new branch in the forked repository.
+
+2. **Pulling Upstream Changes:** Pull the changes from the upstream repository into this new branch. Resolve any conflicts here.
+
+3. **Testing:** Use this branch to test the deployment in Azure. Ensure everything works as expected.
+
+4. **Creating a Pull Request:** Once you're confident with the changes, create a pull request to merge this branch into your main branch.
+
+5. **Review and Merge:** Review the pull request. After approval, merge the pull request.
+
+6. **Delete the Branch:** After the merge, you can safely delete the branch.
+
 ## Prerequisites
 
 - Ensure you have Git installed on your system.
