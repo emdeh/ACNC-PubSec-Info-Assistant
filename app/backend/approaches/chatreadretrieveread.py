@@ -163,7 +163,7 @@ class ChatReadRetrieveReadApproach(Approach):
             self.model_name,
             history,
             user_q,
-            self.query_prompt_few_shots,
+            #self.query_prompt_few_shots,
             self.chatgpt_token_limit - len(user_q)
             )
 
@@ -338,7 +338,7 @@ class ChatReadRetrieveReadApproach(Approach):
                 self.model_name,
                 history,
                 history[-1]["user"] + "Sources:\n" + content + "\n\n", # 3.5 has recency Bias that is why this is here
-                self.response_prompt_few_shots,
+                #self.response_prompt_few_shots,
                 max_tokens=self.chatgpt_token_limit - 500
             )
 
@@ -369,7 +369,7 @@ class ChatReadRetrieveReadApproach(Approach):
                 history,
                 # history[-1]["user"],
                 history[-1]["user"] + "Sources:\n" + content + "\n\n", # GPT 4 starts to degrade with long system messages. so moving sources here 
-                self.response_prompt_few_shots,
+                #self.response_prompt_few_shots,
                 max_tokens=self.chatgpt_token_limit
             )
 
