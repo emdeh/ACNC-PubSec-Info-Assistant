@@ -56,7 +56,7 @@ class ChatReadRetrieveReadApproach(Approach):
     
     -Look for information in the source documents to answer the question in {query_term_language}.
     -If the source document has an answer, please respond with citation.You must include a citation to each document referenced only once when you find answer in source documents.      
-    -If you cannot find answer in below sources, respond with I am not sure.Do not provide personal opinions or assumptions and do not include citations.
+    -If you cannot find answers in below sources, respond with I am not sure.Do not provide personal opinions or assumptions and do not include citations.
     
     {follow_up_questions_prompt}
     {injected_prompt}
@@ -75,21 +75,23 @@ class ChatReadRetrieveReadApproach(Approach):
     If you cannot generate a search query, return just the number 0.
     """
 
-    #Few Shot prompting for Keyword Search Query
+    '''#Few Shot prompting for Keyword Search Query
     query_prompt_few_shots = [
     {'role' : USER, 'content' : 'What are the future plans for public transportation development?' },
     {'role' : ASSISTANT, 'content' : 'Future plans for public transportation' },
     {'role' : USER, 'content' : 'how much renewable energy was generated last year?' },
     {'role' : ASSISTANT, 'content' : 'Renewable energy generation last year' }
-    ]
+    ]'''
+    # Commented out due to deployed model referncing energy conservation seemignly randomly.
 
     #Few Shot prompting for Response. This will feed into Chain of thought system message.
-    response_prompt_few_shots = [
+    '''response_prompt_few_shots = [
     {"role": USER ,'content': 'I am looking for information in source documents'},
     {'role': ASSISTANT, 'content': 'user is looking for information in source documents. Do not provide answers that are not in the source documents'},
     {'role': USER, 'content': 'What steps are being taken to promote energy conservation?'},
     {'role': ASSISTANT, 'content': 'Several steps are being taken to promote energy conservation including reducing energy consumption, increasing energy efficiency, and increasing the use of renewable energy sources.Citations[File0]'}
-    ]
+    ]'''
+    # Commented out due to deployed model referncing energy conservation seemignly randomly.
     
     # # Define a class variable for the base URL
     # EMBEDDING_SERVICE_BASE_URL = 'https://infoasst-cr-{}.azurewebsites.net'
